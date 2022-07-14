@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-           <H1>LAWYER DETAILS</H1>
+           <H1>USER DETAILS</H1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
-{% if data %}
+<!-- {% if data %} -->
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -20,7 +20,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">View Lawyers</h3>
+                <h3 class="card-title">View Users</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -29,35 +29,21 @@
                   <tr>
                     <th>Lawyer Name</th>
                     <th>Email</th>
-                    <th>Enrollment No</th>
-                    <th>Assign Law</th>
+                    <th>Mobile</th>
                     <th>Approval</th>
                     <th>Delete</th>
                   </tr>
                   </thead>
                   <tbody>
-
-                  {% for i in data %}
+                {% for i in data %}
                  
                   <tr>
                     <td>{{i.name}}</td>
                     <td>{{i.email}}</td>
-                    <td>{{i.enrollment_no}}</td>
-                    <form action="{% url 'approve_lawyer' id=i.id %}" method="POST">
-                      {% csrf_token %}
-                    <td>
-                        <select name="law" id="">
-                          {% for j in law %}
-                          <option value="{{j.name}}">{{j.name}}</option>
-                          {% endfor %}
-                        </select> 
+                    <td>{{i.phone}}</td>
+                    <td><a href="{% url 'approve_user' id=i.id %}"><span class="badge badge-danger">Approve</span></a></td>
+                    <td><span class="badge badge-danger">DELETE</span>
                     </td>
-                    <td>
-                      <input type="submit" value="APPROVE" class="btn btn-success btn-sm">
-                    </td>
-                    </form>
-
-                    <td><button class="btn btn-danger btn-sm">DELETE</button></td>
                   </tr>
                 
                  {% endfor %}
@@ -88,7 +74,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Approved Lawyers</h3>
+                <h3 class="card-title">Approved Users</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -97,8 +83,8 @@
                   <tr>
                     <th>Lawyer Name</th>
                     <th>Email</th>
-                    <th>Enrollment No</th>
-                    <th>Law</th>
+                    <th>Mobile</th>
+                    
                     <th>Delete</th>
                   </tr>
                   </thead>
@@ -109,8 +95,8 @@
                   <tr>
                     <td>{{i.name}}</td>
                     <td>{{i.email}}</td>
-                    <td>{{i.enrollment_no}}</td>
-                    <td>{{i.law}}</td>
+                    <td>{{i.phone}}</td>
+                   
                     <td><span class="badge badge-danger">DELETE</span>
                     </td>
                   </tr>

@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% for i in profile_data %}
+    <main>
+
+        <!-- slider Area Start-->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="single-slider slider-height2 d-flex align-items-center" data-background="{% static 'advocate/assets/img/hero/law_hero2.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Profile</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+
+        <!-- About Law Start-->
+        <div class="about-low-area about-bg about-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-5">
+                        <!-- section tittle -->
+                        <div class="section-tittle section-tittle-l mb-70">
+                            <h2>{{i.name}}</h2>
+                        </div>
+                        <div class="about-caption mb-100">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                       
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-7">
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            <div class="about-font-img f-left">
+                                <img src="{{i.lawyer_image.url}}" style="width: 390px; height: 441px" alt="">
+                            </div>
+                            <div class="about-back-img f-right d-none d-md-block">
+                                <img src="{% static 'advocate/assets/img/about/about-low-back.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Law End-->
+
+    
+    </main>
+{% endfor %} 
+{% endblock %}

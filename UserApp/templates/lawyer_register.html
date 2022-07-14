@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>Register Here</h2>
+                            <h2>Advocate Account Creation</h2>
                         </div>
                     </div>
                 </div>
@@ -29,10 +29,10 @@
     
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title">User Registration</h2>
+                        <h2 class="contact-title">Advocate Account Creation</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="{% url 'u_register' %}" method="post">
+                        <form class="form-contact contact_form" action="{% url 'l_register' %}" method="post">
                             {% csrf_token %}
                             <div class="row">
                                
@@ -44,6 +44,11 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="enrollment_no" id="email" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Enrollment Number'" placeholder="Enrollment Number">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -78,24 +83,6 @@
         </section>
     <!-- ================ contact section end ================= -->
 
-    <!-- Want To Work Start -->
-    <div class="wantToWork-area w-padding">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-xl-7 col-lg-9 col-md-8">
-                    <div class="wantToWork-caption">
-                        <h2>Get Your Answer In Just 5 Minutes</h2>
-                        <p>Checking your loan options does not affect your credit score!s</p>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-3 col-md-4">
-                    <div class="wantToWork-btn f-right">
-                        <a href="#" class="btn btn-ans">Get started <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Want To Work End -->
+  
 
 {% endblock %}

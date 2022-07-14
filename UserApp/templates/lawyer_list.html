@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+    
+    <main>
+
+        <!-- slider Area Start-->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="single-slider slider-height2 d-flex align-items-center" data-background="{% static 'advocate/assets/img/hero/law_hero2.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Our Verified Advocates</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+
+        <!-- Legal Practice Area start -->
+        <div class="legal-practice-area section-padding30">
+            <div class="container">
+                  <!--Section Tittle  -->
+                <div class="row ">
+                    <div class="col-xl-12">
+                        <div class="section-tittle text-center mb-5">
+                            <h2>Find a Lawyer</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- single items -->
+                {% if data1 %}
+                <div class="row">
+                    {% for i in data1 %}
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single-practice mb-30">
+                            <div class="practice-img">
+                                <img src="{{i.lawyer_image.url}}" style="width: 360px; height:270px;" alt="">
+
+                               
+                            </div>
+                            <div class="practice-caption">
+                                <h4><a href="{% url 'profile' id=i.id %}">{{i.name}}</a></h4>
+                                <p>Advocate</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="row">
+                    <div class="text-center">
+                     <h2>Advocate not available!!!</h2>     
+                    <div>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+        <!-- Legal Practice Area End-->
+
+        <!-- Want To Work Start -->
+        <div class="w-padding">
+          
+        </div>
+        <!-- Want To Work End -->
+
+    </main>
+
+{% endblock %}
